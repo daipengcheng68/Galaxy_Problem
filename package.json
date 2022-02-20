@@ -1,0 +1,17 @@
+{
+  "name": "problem_daipengcheng",
+  "version": "1.0.0",
+  "description": "",
+  "main": "galaxy.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.5.1"
+  },
+  "dependencies": {
+    "scanf": "^1.1.2"
+  }
+}
