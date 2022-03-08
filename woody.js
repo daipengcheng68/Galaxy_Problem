@@ -96,40 +96,39 @@ function unitsOfGalaxy(line) {
 }
 
 function checkQuestions(con) {
-    let UR = [];
+    let romanUnit = [];
     let result1;
-    let ou = [];
-    let op;
-    let metal;
+    let universUnits = [];
+    let outputUniversUnit;
+    let metalName;
 
-    console.log(MetalInt)
     if (UniversRoman[con[con.length - 2]]) {
         for (let q = 0; q < con.length - 2; q++) {
             if (con[q] === 'is') {
                 for (let k = q + 1; k < con.length - 1; k++) {
-                    UR[k - q - 1] = UniversRoman[con[k]];
-                    ou[k - q - 1] = con[k];
+                    romanUnit[k - q - 1] = UniversRoman[con[k]];
+                    universUnits[k - q - 1] = con[k];
                 }
-                result1 = romanToInt(UR);
-                op = ou.join(" ");
-                console.log(op + " is " + result1);
+                result1 = romanToInt(romanUnit);
+                outputUniversUnit = universUnits.join(" ");
+                console.log(outputUniversUnit + " is " + result1);
             }
         }
     }
 
     else if (MetalInt[con[con.length - 2]]) {
-        metal = con[con.length - 2];
+        metalName = con[con.length - 2];
         for (let q = 0; q < con.length - 1; q++) {
             if (con[q] === 'is') {
                 for (let tem = q + 1; tem < con.length - 2; tem++) {
                     if (UniversRoman[con[tem]]) {
-                        UR[tem - q - 1] = UniversRoman[con[tem]];
-                        ou[tem - q - 1] = con[tem];
+                        romanUnit[tem - q - 1] = UniversRoman[con[tem]];
+                        universUnits[tem - q - 1] = con[tem];
                     }
                 }
-                result1 = romanToInt(UR) * MetalInt[con[con.length - 2]];
-                op = ou.join(" ");
-                console.log(op + " " + metal + " is " + result1 + " Credits");
+                result1 = romanToInt(romanUnit) * MetalInt[con[con.length - 2]];
+                outputUniversUnit = universUnits.join(" ");
+                console.log(outputUniversUnit + " " + metalName + " is " + result1 + " Credits");
             }
         }
     }
