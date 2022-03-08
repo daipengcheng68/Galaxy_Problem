@@ -25,7 +25,7 @@ let splitLine = []
 
 read.on('line', (line) => {
     //console.log(line.trim())
-    let conditionArr = line.split(' ');
+    // let conditionArr = line.split(' ');
     splitLine = line.split(/\s+/);
     if (splitLine[splitLine.length - 1] !== "?") {       // for conditions  // use two equals after !
 
@@ -37,7 +37,7 @@ read.on('line', (line) => {
         }
         // getInfo(con);
     } else {                                // for questions
-        checkQuestions(conditionArr);
+        checkQuestions(splitLine);
     }
 });
 
