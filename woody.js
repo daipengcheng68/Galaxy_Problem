@@ -27,7 +27,7 @@ read.on('line', (line) => {
     //console.log(line.trim())
     let conditionArr = line.split(' ');
     splitLine = line.split(/\s+/);
-    if (splitLine[splitLine.length - 1] !== "?") {       // for conditions// use two equals after !
+    if (splitLine[splitLine.length - 1] !== "?") {       // for conditions  // use two equals after !
 
         if (romanInit.indexOf(splitLine[splitLine.length - 1]) !== -1) {
             currenyOfGalaxy(splitLine);
@@ -74,7 +74,7 @@ function unitsOfGalaxy(line) {
     let findIsInLine = line.indexOf('is');
     let creditValue = line[findIsInLine + 1];
     let sliceArray = line.splice(0, findIsInLine);
-    let creditUnit = sliceArray.pop();
+    let creditUnit = sliceArray.pop(); // delete the final element "is"
 
     var findRoman = "";
     var romanNum = [];
