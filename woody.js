@@ -25,7 +25,7 @@ let splitLine = []
 
 read.on('line', (line) => {
     //console.log(line.trim())
-    let con = line.split(' ');
+    let conditionArr = line.split(' ');
     splitLine = line.split(/\s+/);
     if (splitLine[splitLine.length - 1] !== "?") {       // for conditions// use two equals after !
 
@@ -37,7 +37,7 @@ read.on('line', (line) => {
         }
         // getInfo(con);
     } else {                                // for questions
-        checkQuestions(con);
+        checkQuestions(conditionArr);
     }
 });
 
@@ -76,19 +76,19 @@ function unitsOfGalaxy(line) {
     let sliceArray = line.splice(0, findIsInLine);
     let creditUnit = sliceArray.pop();
 
-    var cRoman = "";
-    var cRomanArr = [];
+    var findRoman = "";
+    var romanNum = [];
     // var finalValue = 0;
 
     for (var i = 0; i < sliceArray.length; i++) {
         if (UniversRoman[sliceArray[i]]) {
-            cRoman += UniversRoman[sliceArray[i]];
-            cRomanArr.push(UniversRoman[sliceArray[i]]);
+            findRoman += UniversRoman[sliceArray[i]];
+            romanNum.push(UniversRoman[sliceArray[i]]);
         }
     }
     // console.log(cRoman, "cRoman")
     // console.log(cRomanArr, "cRomanArr")
-    let intVal = romanToInt(cRoman);
+    let intVal = romanToInt(findRoman);
     if (intVal !== -1) {
         intVal = creditValue / intVal;
         MetalInt[creditUnit] = intVal;
