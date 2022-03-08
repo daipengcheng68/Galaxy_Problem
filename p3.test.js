@@ -13,7 +13,7 @@ var MetalInt = {};
 
 describe("galaxy", function () {
 
-    it("should check the transfer from roman to interger", () => {
+    it("should check the transfer from roman to integer", () => {
         expect(romanToInt("MCMIII")).toEqual(1903);
     })
 
